@@ -5,17 +5,15 @@
     <a href="index.html" class="flex items-center px-4 lg:px-5">
       <h1 class="text-xl font-bold m-0">DFW Gardener</h1>
     </a>
-
     <!-- Mobile Menu Toggle Button -->
     <button type="button" class="lg:hidden p-4" @click="toggleNavbar">
       <span class="fas fa-bars"></span>
     </button>
-
     <!-- Navbar Links and Actions -->
     <div
       :class="[
         'lg:flex lg:items-center lg:flex-grow lg:justify-between',
-        isNavbarOpen ? 'flex' : 'hidden'
+        isNavbarOpen ? 'block' : 'hidden'
       ]"
       id="navbarCollapse"
     >
