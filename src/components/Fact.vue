@@ -6,7 +6,6 @@
   >
     <div class="max-w-7xl mx-auto py-10">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        Fact 1
         <div
           v-for="(fact, index) in facts"
           :key="index"
