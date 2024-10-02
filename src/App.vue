@@ -6,6 +6,8 @@
     <NavbarComponent />
     <!-- Other components or content can be added here later -->
     <FeatureComponent />
+
+    <AboutComponent />
   </div>
 </template>
 
@@ -14,13 +16,15 @@
 import TopbarComponent from './components/Topbar.vue'
 import NavbarComponent from './components/Navbar.vue'
 import FeatureComponent from './components/Feature.vue'
+import AboutComponent from './components/About.vue'
 
 export default {
   name: 'App',
   components: {
     TopbarComponent,
     NavbarComponent,
-    FeatureComponent
+    FeatureComponent,
+    AboutComponent
   }
 }
 </script>
