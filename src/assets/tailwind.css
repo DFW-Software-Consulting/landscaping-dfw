@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+    font-family: 'Baltimore';
+    src: url('/src/assets/fonts/Baltimore.ttf') format('truetype');
+    /* Adjust path & format */
+    font-weight: normal;
+    font-style: normal;
+}

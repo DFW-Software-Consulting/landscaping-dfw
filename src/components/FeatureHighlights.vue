@@ -6,17 +6,13 @@
     With our team of experts, you can be assured of an outstanding transformation for your green
     space.
   </p>
-  <div
-    class="w-full my-10 py-20 bg-fixed bg-cover bg-center text-white"
-    :style="{ backgroundImage: `url(${backgroundImage})` }"
-  >
+  <div class="w-full my-10 py-20 bg-fixed bg-cover bg-center text-white"
+    :style="{ backgroundImage: `url(${backgroundImage})` }">
     <div class="max-w-7xl mx-auto py-10">
       <!-- Title and Description -->
 
       <!-- Bullet Points Section: Overlay on the Image -->
-      <ul
-        class="list-disc list-inside space-y-6 drop-shadow-xl shadow-black shadow-lg font-bold text-3xl"
-      >
+      <ul class="list-disc list-inside space-y-6 font-bold text-3xl font-baltimore">
         <li>High-quality plants and materials</li>
         <li>Experienced gardening professionals</li>
         <li>Customized design solutions</li>

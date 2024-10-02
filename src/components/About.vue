@@ -18,11 +18,8 @@
             eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore
             erat amet
           </p>
-          <a
-            class="inline-block bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-700 transition"
-            href=""
-            >Explore More</a
-          >
+          <a class="inline-block bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-700 transition" href="">Explore
+            More</a>
         </div>
 
         <!-- Info Boxes -->
