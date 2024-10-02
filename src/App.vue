@@ -8,6 +8,8 @@
     <FeatureComponent />
 
     <AboutComponent />
+
+    <FactComponent />
   </div>
 </template>
 
@@ -17,6 +19,7 @@ import TopbarComponent from './components/Topbar.vue'
 import NavbarComponent from './components/Navbar.vue'
 import FeatureComponent from './components/Feature.vue'
 import AboutComponent from './components/About.vue'
+import FactComponent from './components/Fact.vue'
 
 export default {
   name: 'App',
@@ -24,7 +27,8 @@ export default {
     TopbarComponent,
     NavbarComponent,
     FeatureComponent,
-    AboutComponent
+    AboutComponent,
+    FactComponent
   }
 }
 </script>
