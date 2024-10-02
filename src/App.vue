@@ -17,6 +17,8 @@
     <FreeQuoteComponent />
 
     <ProjectsComponent />
+
+    <TeamComponent />
   </div>
 </template>
 
@@ -31,6 +33,7 @@ import FeatureHighlightsComponent from './components/FeatureHighlights.vue'
 import ServiceComponent from './components/Services.vue'
 import FreeQuoteComponent from './components/FreeQuote.vue'
 import ProjectsComponent from './components/Projects.vue'
+import TeamComponent from './components/Team.vue'
 
 export default {
   name: 'App',
@@ -43,7 +46,8 @@ export default {
     FeatureHighlightsComponent,
     ServiceComponent,
     FreeQuoteComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    TeamComponent
   }
 }
 </script>
