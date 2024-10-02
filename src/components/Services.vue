@@ -10,18 +10,12 @@
 
       <!-- Service Items -->
       <div class="flex flex-wrap gap-8">
-        <div
-          v-for="(service, index) in services"
-          :key="index"
-          class="w-full lg:w-1/3 md:w-1/2 animate-fade-in"
-          :style="{ animationDelay: `${service.delay}s` }"
-        >
+        <div v-for="(service, index) in services" :key="index" class="w-full lg:w-1/3 md:w-1/2 animate-fade-in"
+          :style="{ animationDelay: `${service.delay}s` }">
           <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
             <img class="w-full h-48 object-cover" :src="service.image" :alt="service.title" />
             <div class="p-6">
-              <div
-                class="flex items-center justify-center bg-light rounded-full w-16 h-16 mx-auto mb-4"
-              >
+              <div class="flex items-center justify-center bg-light rounded-full w-16 h-16 mx-auto mb-4">
                 <img class="w-10 h-10" :src="service.icon" :alt="`${service.title} Icon`" />
               </div>
               <h4 class="text-xl font-semibold mb-3">{{ service.title }}</h4>

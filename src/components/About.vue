@@ -23,7 +23,7 @@
         </div>
 
         <!-- Info Boxes -->
-        <div class="w-full md:w-full lg:w-3/12 animate-fade-in-up">
+        <div class="w-full flex md:w-full lg:w-3/12 animate-fade-in-up">
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-12">
             <!-- Box 1 -->
             <div class="border-l-4 border-blue-600 pl-4">
