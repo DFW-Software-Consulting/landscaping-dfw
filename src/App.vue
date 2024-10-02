@@ -2,18 +2,22 @@
   <div id="app">
     <!-- Import and use TopbarComponent -->
     <TopbarComponent />
+    <!-- Import and use NavbarComponent -->
+    <NavbarComponent />
     <!-- Other components or content can be added here later -->
   </div>
 </template>
 
 <script>
-// Import the Topbar component
+// Import the components
 import TopbarComponent from './components/Topbar.vue'
+import NavbarComponent from './components/Navbar.vue'
 
 export default {
   name: 'App',
   components: {
-    TopbarComponent
+    TopbarComponent,
+    NavbarComponent
   }
 }
 </script>
