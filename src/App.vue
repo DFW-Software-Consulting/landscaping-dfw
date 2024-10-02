@@ -8,7 +8,7 @@
 
     <AboutComponent />
 
-    <FactComponent />
+    <!-- <FactComponent /> -->
 
     <FeatureHighlightsComponent />
 
@@ -19,6 +19,12 @@
     <ProjectsComponent />
 
     <TeamComponent />
+
+    <TestimonialComponent />
+
+    <FooterComponent />
+
+    <CopyrightsComponent />
   </div>
 </template>
 
@@ -28,12 +34,15 @@ import TopbarComponent from './components/Topbar.vue'
 import NavbarComponent from './components/Navbar.vue'
 import FeatureComponent from './components/Feature.vue'
 import AboutComponent from './components/About.vue'
-import FactComponent from './components/Fact.vue'
+// import FactComponent from './components/Fact.vue'
 import FeatureHighlightsComponent from './components/FeatureHighlights.vue'
 import ServiceComponent from './components/Services.vue'
 import FreeQuoteComponent from './components/FreeQuote.vue'
 import ProjectsComponent from './components/Projects.vue'
 import TeamComponent from './components/Team.vue'
+import TestimonialComponent from './components/Testimonial.vue'
+import FooterComponent from './components/Footer.vue'
+import CopyrightsComponent from './components/Copyrights.vue'
 
 export default {
   name: 'App',
@@ -42,12 +51,15 @@ export default {
     NavbarComponent,
     FeatureComponent,
     AboutComponent,
-    FactComponent,
+    // FactComponent,
     FeatureHighlightsComponent,
     ServiceComponent,
     FreeQuoteComponent,
     ProjectsComponent,
-    TeamComponent
+    TeamComponent,
+    TestimonialComponent,
+    FooterComponent,
+    CopyrightsComponent
   }
 }
 </script>
