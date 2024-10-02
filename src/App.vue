@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <!-- Import and use TopbarComponent -->
     <TopbarComponent />
-    <!-- Import and use NavbarComponent -->
+
     <NavbarComponent />
-    <!-- Other components or content can be added here later -->
+
     <FeatureComponent />
 
     <AboutComponent />
 
     <FactComponent />
+
+    <FeatureHighlightsComponent />
+
+    <ServiceComponent />
   </div>
 </template>
 
@@ -20,6 +23,8 @@ import NavbarComponent from './components/Navbar.vue'
 import FeatureComponent from './components/Feature.vue'
 import AboutComponent from './components/About.vue'
 import FactComponent from './components/Fact.vue'
+import FeatureHighlightsComponent from './components/FeatureHighlights.vue'
+import ServiceComponent from './components/Services.vue'
 
 export default {
   name: 'App',
@@ -28,7 +33,9 @@ export default {
     NavbarComponent,
     FeatureComponent,
     AboutComponent,
-    FactComponent
+    FactComponent,
+    FeatureHighlightsComponent,
+    ServiceComponent
   }
 }
 </script>

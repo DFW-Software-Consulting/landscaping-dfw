@@ -4,7 +4,11 @@
     <div class="max-w-7xl mx-auto flex flex-wrap items-center gap-12">
       <!-- Image Section -->
       <div class="w-full lg:w-1/2">
-        <img class="w-full rounded-lg shadow-md" src="img/highlight.jpg" alt="Highlight Feature" />
+        <img
+          class="w-full rounded-lg shadow-md"
+          src="../assets/img/carousel-1.jpg"
+          alt="Highlight Feature"
+        />
       </div>
 
       <!-- Text Content Section -->
