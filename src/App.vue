@@ -13,6 +13,10 @@
     <FeatureHighlightsComponent />
 
     <ServiceComponent />
+
+    <FreeQuoteComponent />
+
+    <ProjectsComponent />
   </div>
 </template>
 
@@ -25,6 +29,8 @@ import AboutComponent from './components/About.vue'
 import FactComponent from './components/Fact.vue'
 import FeatureHighlightsComponent from './components/FeatureHighlights.vue'
 import ServiceComponent from './components/Services.vue'
+import FreeQuoteComponent from './components/FreeQuote.vue'
+import ProjectsComponent from './components/Projects.vue'
 
 export default {
   name: 'App',
@@ -35,7 +41,9 @@ export default {
     AboutComponent,
     FactComponent,
     FeatureHighlightsComponent,
-    ServiceComponent
+    ServiceComponent,
+    FreeQuoteComponent,
+    ProjectsComponent
   }
 }
 </script>
