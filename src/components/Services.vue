@@ -8,10 +8,9 @@
         <h1 class="text-5xl font-bold mb-5">Services That We Offer For You</h1>
       </div>
 
-      <!-- Service Items -->
-      <div class="flex flex-wrap gap-8">
-        <div v-for="(service, index) in services" :key="index" class="w-full lg:w-1/3 md:w-1/2 animate-fade-in"
-          :style="{ animationDelay: `${service.delay}s` }">
+      <!-- Service Items Swiper Carousel -->
+      <swiper :slides-per-view="3" :space-between="30" navigation pagination loop autoplay>
+        <swiper-slide v-for="(service, index) in services" :key="index" class="px-2">
           <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
             <img class="w-full h-48 object-cover" :src="service.image" :alt="service.title" />
             <div class="p-6">
@@ -25,23 +24,30 @@
               </a>
             </div>
           </div>
-        </div>
-      </div>
+        </swiper-slide>
+      </swiper>
     </div>
   </div>
   <!-- Services End -->
 </template>
 
 <script>
-import serviceImage1 from '../assets/img/service-1.jpg'
-import serviceIcon1 from '../assets/img/icon/icon-3.png'
-import serviceImage2 from '../assets/img/service-2.jpg'
-import serviceIcon2 from '../assets/img/icon/icon-6.png'
-import serviceImage3 from '../assets/img/service-3.jpg'
-import serviceIcon3 from '../assets/img/icon/icon-5.png'
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/swiper-bundle.css';
+
+import serviceImage1 from '../assets/img/service-1.jpg';
+import serviceIcon1 from '../assets/img/icon/icon-3.png';
+import serviceImage2 from '../assets/img/service-2.jpg';
+import serviceIcon2 from '../assets/img/icon/icon-6.png';
+import serviceImage3 from '../assets/img/service-3.jpg';
+import serviceIcon3 from '../assets/img/icon/icon-5.png';
 
 export default {
   name: 'ServicesSection',
+  components: {
+    Swiper,
+    SwiperSlide
+  },
   data() {
     return {
       services: [
@@ -71,11 +77,15 @@ export default {
         }
         // You can add more service items here
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style scoped>
-/* Scoped styles if needed */
+/* Add any custom styles for the swiper carousel */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000;
+}
 </style>
