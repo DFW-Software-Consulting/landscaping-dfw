@@ -3,7 +3,7 @@
   <nav class="bg-white sticky top-0 w-full flex items-center justify-between p-0 shadow-md">
     <!-- Brand Logo -->
     <a href="index.html" class="flex items-center px-4 lg:px-5">
-      <h1 class="text-xl font-bold m-0">DFW Gardener</h1>
+      <h1 class="text-xl font-bold m-0">DFW Landscaping Company</h1>
     </a>
     <!-- Mobile Menu Toggle Button -->
     <button type="button" class="lg:hidden p-4" @click="toggleNavbar">
@@ -21,9 +21,9 @@
         class="flex flex-col lg:flex-row lg:ml-auto space-y-4 lg:space-y-0 lg:space-x-6 p-4 lg:p-0"
       >
         <a href="index.html" class="text-gray-700 hover:text-gray-900 font-semibold">Home</a>
-        <a href="about.html" class="text-gray-700 hover:text-gray-900 font-semibold">About</a>
-        <a href="service.html" class="text-gray-700 hover:text-gray-900 font-semibold">Services</a>
-        <a href="project.html" class="text-gray-700 hover:text-gray-900 font-semibold">Projects</a>
+        <a href="#about" class="text-gray-700 hover:text-gray-900 font-semibold">About</a>
+        <a href="#services" class="text-gray-700 hover:text-gray-900 font-semibold">Services</a>
+        <a href="#project" class="text-gray-700 hover:text-gray-900 font-semibold">Projects</a>
         <!-- Dropdown Menu -->
         <div class="relative group">
           <a href="#" class="text-gray-700 hover:text-gray-900 font-semibold cursor-pointer"
@@ -33,17 +33,17 @@
             class="hidden absolute bg-white shadow-lg rounded mt-2 w-40 group-hover:flex flex-col space-y-2"
           >
             <a href="feature.html" class="px-4 py-2 hover:bg-gray-100">Features</a>
-            <a href="quote.html" class="px-4 py-2 hover:bg-gray-100">Free Quote</a>
+            <a href="#quote" class="px-4 py-2 hover:bg-gray-100">Free Quote</a>
             <a href="team.html" class="px-4 py-2 hover:bg-gray-100">Our Team</a>
             <a href="testimonial.html" class="px-4 py-2 hover:bg-gray-100">Testimonial</a>
             <a href="404.html" class="px-4 py-2 hover:bg-gray-100">404 Page</a>
           </div>
         </div>
-        <a href="contact.html" class="text-gray-700 hover:text-gray-900 font-semibold">Contact</a>
+        <a href="#contact" class="text-gray-700 hover:text-gray-900 font-semibold">Contact</a>
       </div>
       <!-- Get A Quote Button -->
       <a
-        href=""
+        href="#quote"
         class="hidden lg:inline-block bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition"
       >
         Get A Quote <i class="fa fa-arrow-right ml-3"></i>

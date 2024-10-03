@@ -1,6 +1,6 @@
 <template>
   <!-- Services Section -->
-  <div class="w-full py-20">
+  <section id="services" class="w-full py-20">
     <div class="max-w-7xl mx-auto">
       <!-- Section Title -->
       <div class="text-center mx-auto mb-12" style="max-width: 500px">
@@ -77,7 +77,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

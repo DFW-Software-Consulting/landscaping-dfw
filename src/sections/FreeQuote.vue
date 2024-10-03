@@ -1,6 +1,7 @@
 <template>
   <!-- Quote Start -->
-  <div
+  <section
+    id="quote"
     class="w-full bg-cover bg-center py-20"
     :style="{ backgroundImage: `url(${backgroundImage})` }"
   >
@@ -77,7 +78,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
   <!-- Quote End -->
 </template>
 

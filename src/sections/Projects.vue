@@ -1,6 +1,6 @@
 <template>
   <!-- Projects Start -->
-  <div class="w-full py-20">
+  <section id="project" class="w-full py-20">
     <div class="container mx-auto">
       <!-- Header -->
       <div class="text-center mx-auto mb-10 max-w-lg">
@@ -102,7 +102,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
   <!-- Projects End -->
 </template>
 
