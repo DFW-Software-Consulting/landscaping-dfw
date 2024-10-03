@@ -1,65 +1,64 @@
 <template>
   <div id="app" class="overflow-x-hidden">
-    <TopbarComponent />
+    <TopbarSection />
 
-    <NavbarComponent />
+    <NavbarSection />
 
-    <FeatureComponent />
+    <FeatureSection />
 
-    <AboutComponent />
+    <AboutSection />
 
-    <!-- <FactComponent /> -->
+    <!-- <FactSection /> -->
 
-    <FeatureHighlightsComponent />
+    <FeatureHighlightsSection />
 
-    <ServiceComponent />
+    <ServiceSection />
 
-    <FreeQuoteComponent />
+    <FreeQuoteSection />
 
-    <ProjectsComponent />
+    <ProjectsSection />
 
-    <TeamComponent />
+    <TeamSection />
 
-    <TestimonialComponent />
+    <TestimonialSection />
 
-    <FooterComponent />
+    <FooterSection />
 
-    <CopyrightsComponent />
+    <CopyrightsSection />
   </div>
 </template>
 
 <script>
-// Import the components
-import TopbarComponent from './components/Topbar.vue'
-import NavbarComponent from './components/Navbar.vue'
-import FeatureComponent from './components/Feature.vue'
-import AboutComponent from './components/About.vue'
-// import FactComponent from './components/Fact.vue'
-import FeatureHighlightsComponent from './components/FeatureHighlights.vue'
-import ServiceComponent from './components/Services.vue'
-import FreeQuoteComponent from './components/FreeQuote.vue'
-import ProjectsComponent from './components/Projects.vue'
-import TeamComponent from './components/Team.vue'
-import TestimonialComponent from './components/Testimonial.vue'
-import FooterComponent from './components/Footer.vue'
-import CopyrightsComponent from './components/Copyrights.vue'
+import TopbarSection from './sections/Topbar.vue'
+import NavbarSection from './sections/Navbar.vue'
+import FeatureSection from './sections/Feature.vue'
+import AboutSection from './sections/About.vue'
+// import FactSection from './sections/Fact.vue'
+import FeatureHighlightsSection from './sections/FeatureHighlights.vue'
+import ServiceSection from './sections/Services.vue'
+import FreeQuoteSection from './sections/FreeQuote.vue'
+import ProjectsSection from './sections/Projects.vue'
+import TeamSection from './sections/Team.vue'
+import TestimonialSection from './sections/Testimonial.vue'
+import FooterSection from './sections/Footer.vue'
+import CopyrightsSection from './sections/Copyrights.vue'
 
 export default {
   name: 'App',
   components: {
-    TopbarComponent,
-    NavbarComponent,
-    FeatureComponent,
-    AboutComponent,
-    // FactComponent,
-    FeatureHighlightsComponent,
-    ServiceComponent,
-    FreeQuoteComponent,
-    ProjectsComponent,
-    TeamComponent,
-    TestimonialComponent,
-    FooterComponent,
-    CopyrightsComponent
+    TopbarSection,
+    NavbarSection,
+    FeatureSection,
+    AboutSection,
+    // FactSection,
+    FeatureHighlightsSection,
+    ServiceSection,
+    FreeQuoteSection,
+    ProjectsSection,
+    TeamSection,
+    TestimonialSection,
+    FooterSection,
+    CopyrightsSection
   }
 }
 </script>
