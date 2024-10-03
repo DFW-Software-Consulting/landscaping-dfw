@@ -15,14 +15,14 @@
     <button
       v-if="showNavigation"
       @click="prevSlide"
-      class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full"
+      class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white text-gray-700 p-2 rounded-full border-2 border-transparent hover:border-gray-700 transition duration-300"
     >
       &lt;
     </button>
     <button
       v-if="showNavigation"
       @click="nextSlide"
-      class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full"
+      class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white text-gray-700 p-2 rounded-full border-2 border-transparent hover:border-gray-700 transition duration-300"
     >
       &gt;
     </button>
@@ -82,5 +82,5 @@ export default {
 </script>
 
 <style scoped>
-/* Add any styles for the carousel here */
+/* Add any additional styles for the carousel if needed */
 </style>

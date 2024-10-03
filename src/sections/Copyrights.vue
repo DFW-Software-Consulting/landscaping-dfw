@@ -6,8 +6,9 @@
         <!-- Left Text -->
         <div class="text-center md:text-left mb-3 md:mb-0">
           &copy;
-          <a class="border-b border-transparent hover:border-gray-300" href="#">Your Site Name</a>,
-          All Right Reserved.
+          <a class="border-b border-transparent hover:border-gray-300" href="#"
+            >DFW Software Consulting</a
+          >, All Right Reserved.
         </div>
 
         <!-- Right Text -->

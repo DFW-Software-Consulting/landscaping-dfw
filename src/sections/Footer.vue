@@ -4,7 +4,7 @@
     <div class="container mx-auto py-10">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <!-- Office Section -->
-        <div>
+        <div class="text-left">
           <h4 class="text-white mb-4 text-lg font-semibold">Our Office</h4>
           <p class="mb-2 flex items-center">
             <i class="fa fa-map-marker-alt mr-3"></i>123 Street, New York, USA
@@ -36,7 +36,7 @@
         </div>
 
         <!-- Services Section -->
-        <div>
+        <div class="text-left">
           <h4 class="text-white mb-4 text-lg font-semibold">Services</h4>
           <a class="block text-gray-300 hover:text-white transition" href="#">Landscaping</a>
           <a class="block text-gray-300 hover:text-white transition" href="#">Pruning plants</a>
@@ -46,7 +46,7 @@
         </div>
 
         <!-- Quick Links Section -->
-        <div>
+        <div class="text-left">
           <h4 class="text-white mb-4 text-lg font-semibold">Quick Links</h4>
           <a class="block text-gray-300 hover:text-white transition" href="#">About Us</a>
           <a class="block text-gray-300 hover:text-white transition" href="#">Contact Us</a>
