@@ -43,7 +43,7 @@
 
 <script>
 export default {
-  name: 'CopyrightSection',
+  name: 'CopyrightComponent',
   methods: {
     scrollToTop() {
       window.scrollTo({

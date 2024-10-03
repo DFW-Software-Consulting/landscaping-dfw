@@ -24,7 +24,7 @@
 
     <FooterSection />
 
-    <CopyrightsSection />
+    <CopyrightsComponent />
   </div>
 </template>
 
@@ -41,7 +41,7 @@ import ProjectsSection from './sections/Projects.vue'
 import TeamSection from './sections/Team.vue'
 import TestimonialSection from './sections/Testimonial.vue'
 import FooterSection from './sections/Footer.vue'
-import CopyrightsSection from './sections/Copyrights.vue'
+import CopyrightsComponent from './components/Copyrights.vue'
 
 export default {
   name: 'App',
@@ -58,7 +58,7 @@ export default {
     TeamSection,
     TestimonialSection,
     FooterSection,
-    CopyrightsSection
+    CopyrightsComponent
   }
 }
 </script>
