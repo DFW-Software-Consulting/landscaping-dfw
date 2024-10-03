@@ -8,13 +8,20 @@
         <h1 class="text-5xl font-bold mb-5">Services That We Offer For You</h1>
       </div>
 
-      <!-- Service Items Swiper Carousel -->
-      <swiper :slides-per-view="3" :space-between="30" navigation pagination loop autoplay>
-        <swiper-slide v-for="(service, index) in services" :key="index" class="px-2">
+      <!-- Service Items -->
+      <div class="flex flex-wrap gap-8 justify-center">
+        <div
+          v-for="(service, index) in services"
+          :key="index"
+          class="w-full lg:w-1/3 md:w-1/2 flex-shrink-0 animate-fade-in"
+          :style="{ animationDelay: `${service.delay}s` }"
+        >
           <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
             <img class="w-full h-48 object-cover" :src="service.image" :alt="service.title" />
             <div class="p-6">
-              <div class="flex items-center justify-center bg-light rounded-full w-16 h-16 mx-auto mb-4">
+              <div
+                class="flex items-center justify-center bg-light rounded-full w-16 h-16 mx-auto mb-4"
+              >
                 <img class="w-10 h-10" :src="service.icon" :alt="`${service.title} Icon`" />
               </div>
               <h4 class="text-xl font-semibold mb-3">{{ service.title }}</h4>
@@ -24,30 +31,23 @@
               </a>
             </div>
           </div>
-        </swiper-slide>
-      </swiper>
+        </div>
+      </div>
     </div>
   </div>
   <!-- Services End -->
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper-bundle.css';
-
-import serviceImage1 from '../assets/img/service-1.jpg';
-import serviceIcon1 from '../assets/img/icon/icon-3.png';
-import serviceImage2 from '../assets/img/service-2.jpg';
-import serviceIcon2 from '../assets/img/icon/icon-6.png';
-import serviceImage3 from '../assets/img/service-3.jpg';
-import serviceIcon3 from '../assets/img/icon/icon-5.png';
+import serviceImage1 from '../assets/img/service-1.jpg'
+import serviceIcon1 from '../assets/img/icon/icon-3.png'
+import serviceImage2 from '../assets/img/service-2.jpg'
+import serviceIcon2 from '../assets/img/icon/icon-6.png'
+import serviceImage3 from '../assets/img/service-3.jpg'
+import serviceIcon3 from '../assets/img/icon/icon-5.png'
 
 export default {
   name: 'ServicesSection',
-  components: {
-    Swiper,
-    SwiperSlide
-  },
   data() {
     return {
       services: [
@@ -77,15 +77,11 @@ export default {
         }
         // You can add more service items here
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped>
-/* Add any custom styles for the swiper carousel */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #000;
-}
+/* Add any custom styles for the services here */
 </style>
