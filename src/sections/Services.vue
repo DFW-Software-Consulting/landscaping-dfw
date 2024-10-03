@@ -1,5 +1,5 @@
 <template>
-  <!-- Services Start -->
+  <!-- Services Section with Carousel -->
   <div class="w-full py-20">
     <div class="max-w-7xl mx-auto">
       <!-- Section Title -->
@@ -8,37 +8,42 @@
         <h1 class="text-5xl font-bold mb-5">Services That We Offer For You</h1>
       </div>
 
-      <!-- Service Items -->
-      <div class="flex flex-wrap gap-8 justify-center">
-        <div
-          v-for="(service, index) in services"
-          :key="index"
-          class="w-full lg:w-1/3 md:w-1/2 flex-shrink-0 animate-fade-in"
-          :style="{ animationDelay: `${service.delay}s` }"
-        >
-          <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
-            <img class="w-full h-48 object-cover" :src="service.image" :alt="service.title" />
-            <div class="p-6">
+      <!-- Reusable Carousel Component -->
+      <Carousel :slides="services" :autoplay="true" :autoplayDelay="5000" :showNavigation="true">
+        <!-- Use Scoped Slot to Render Slide Content -->
+        <template v-slot:default="{ slide }">
+          <!-- Responsive Slide Container -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row h-full"
+          >
+            <!-- Responsive Image -->
+            <img
+              class="w-full md:w-1/3 h-40 md:h-auto object-cover"
+              :src="slide.image"
+              :alt="slide.title"
+            />
+            <!-- Slide Content -->
+            <div class="p-6 flex-1">
               <div
-                class="flex items-center justify-center bg-light rounded-full w-16 h-16 mx-auto mb-4"
+                class="flex items-center justify-center bg-light rounded-full w-16 h-16 mx-auto md:mx-0 mb-4"
               >
-                <img class="w-10 h-10" :src="service.icon" :alt="`${service.title} Icon`" />
+                <img class="w-10 h-10" :src="slide.icon" :alt="`${slide.title} Icon`" />
               </div>
-              <h4 class="text-xl font-semibold mb-3">{{ service.title }}</h4>
-              <p class="text-gray-600 mb-4">{{ service.description }}</p>
+              <h4 class="text-xl font-semibold mb-3">{{ slide.title }}</h4>
+              <p class="text-gray-600 mb-4">{{ slide.description }}</p>
               <a class="text-primary flex items-center justify-center text-sm font-medium" href="#">
                 <i class="fa fa-plus text-primary mr-2"></i>Read More
               </a>
             </div>
           </div>
-        </div>
-      </div>
+        </template>
+      </Carousel>
     </div>
   </div>
-  <!-- Services End -->
 </template>
 
 <script>
+import Carousel from '@/components/Carousel.vue'
 import serviceImage1 from '../assets/img/service-1.jpg'
 import serviceIcon1 from '../assets/img/icon/icon-3.png'
 import serviceImage2 from '../assets/img/service-2.jpg'
@@ -48,6 +53,9 @@ import serviceIcon3 from '../assets/img/icon/icon-5.png'
 
 export default {
   name: 'ServicesSection',
+  components: {
+    Carousel
+  },
   data() {
     return {
       services: [
@@ -56,26 +64,22 @@ export default {
           description:
             'Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.',
           image: serviceImage1,
-          icon: serviceIcon1,
-          delay: 0.1
+          icon: serviceIcon1
         },
         {
           title: 'Pruning Plants',
           description:
             'Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.',
           image: serviceImage2,
-          icon: serviceIcon2,
-          delay: 0.3
+          icon: serviceIcon2
         },
         {
           title: 'Irrigation & Drainage',
           description:
             'Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.',
           image: serviceImage3,
-          icon: serviceIcon3,
-          delay: 0.5
+          icon: serviceIcon3
         }
-        // You can add more service items here
       ]
     }
   }
@@ -83,5 +87,5 @@ export default {
 </script>
 
 <style scoped>
-/* Add any custom styles for the services here */
+/* Styles for the services section */
 </style>
