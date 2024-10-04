@@ -1,29 +1,22 @@
 <template>
   <div id="app" class="overflow-x-hidden">
+    <!-- Topbar (Will scroll away) -->
     <TopbarSection />
 
-    <NavbarSection />
+    <nav class="sticky top-0 z-50">
+      <NavbarSection />
+    </nav>
 
     <FeatureSection />
-
     <AboutSection />
-
     <!-- <FactSection /> -->
-
     <FeatureHighlightsSection />
-
     <ServiceSection />
-
     <FreeQuoteSection />
-
     <ProjectsSection />
-
     <TeamSection />
-
     <TestimonialSection />
-
     <FooterSection />
-
     <CopyrightsComponent />
   </div>
 </template>

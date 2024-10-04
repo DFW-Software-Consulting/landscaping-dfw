@@ -1,6 +1,6 @@
 <template>
   <!-- Navbar Start -->
-  <nav class="bg-white sticky top-0 w-full flex items-center justify-between p-0 shadow-md">
+  <nav class="bg-white w-full flex items-center justify-between p-0 shadow-md">
     <!-- Brand Logo -->
     <a href="index.html" class="flex items-center px-4 lg:px-5">
       <!-- Use the imported logo as the source -->
@@ -79,14 +79,14 @@
 </template>
 
 <script>
-import logo from '../assets/img/icon/icon-10.png' // Import the logo image
+import logo from '../assets/img/icon/icon-10.png'
 
 export default {
   name: 'NavbarComponent',
   data() {
     return {
       isNavbarOpen: false,
-      logo // Reference the imported logo in data
+      logo
     }
   },
   methods: {
