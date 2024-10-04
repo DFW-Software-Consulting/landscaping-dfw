@@ -7,10 +7,14 @@
         <div class="text-left">
           <h4 class="text-white mb-4 text-lg font-semibold">Our Office</h4>
           <p class="mb-2 flex items-center">
-            <i class="fa fa-map-marker-alt mr-3"></i>123 Street, New York, USA
+            <i class="fa fa-map-marker-alt mr-3"></i>{{ metaData.address }}
           </p>
-          <p class="mb-2 flex items-center"><i class="fa fa-phone-alt mr-3"></i>+012 345 67890</p>
-          <p class="mb-2 flex items-center"><i class="fa fa-envelope mr-3"></i>info@example.com</p>
+          <p class="mb-2 flex items-center">
+            <i class="fa fa-phone-alt mr-3"></i>{{ metaData.phone }}
+          </p>
+          <p class="mb-2 flex items-center">
+            <i class="fa fa-envelope mr-3"></i>{{ metaData.email }}
+          </p>
           <div class="flex space-x-3 mt-4">
             <a
               class="w-8 h-8 flex items-center justify-center bg-gray-700 rounded-full text-white"
@@ -80,8 +84,15 @@
 </template>
 
 <script>
+import { metaData } from '@/data/metaData'
+
 export default {
-  name: 'FooterSection'
+  name: 'FooterSection',
+  data() {
+    return {
+      metaData
+    }
+  }
 }
 </script>
 

@@ -6,8 +6,9 @@
         <!-- Left Text -->
         <div class="text-center md:text-left mb-3 md:mb-0">
           &copy;
-          <a class="border-b border-transparent hover:border-gray-300" href="#"
-            >DFW Software Consulting</a
+          <a class="border-b border-transparent hover:border-gray-300" href="#">{{
+            metaData.credits.company
+          }}</a
           >, All Right Reserved.
         </div>
 
@@ -16,14 +17,14 @@
           Designed By
           <a
             class="border-b border-transparent hover:border-gray-300"
-            href="https://www.linkedin.com/in/jeremy-ashley-webdev"
-            >Jeremy Ashley</a
+            :href="metaData.credits.linkedin"
+            >{{ metaData.credits.author }}</a
           >
           Distributed By
           <a
             class="border-b border-transparent hover:border-gray-300"
-            href="https://dfwsc.netlify.app"
-            >DFW Software Consulting</a
+            :href="metaData.credits.companyWebsite"
+            >{{ metaData.credits.companyName }}</a
           >
         </div>
       </div>
@@ -42,8 +43,15 @@
 </template>
 
 <script>
+import { metaData } from '@/data/metaData'
+
 export default {
   name: 'CopyrightComponent',
+  data() {
+    return {
+      metaData
+    }
+  },
   methods: {
     scrollToTop() {
       window.scrollTo({

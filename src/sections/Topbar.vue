@@ -6,21 +6,29 @@
         <!-- Phone Contact -->
         <div class="flex items-center space-x-2">
           <i class="fa fa-phone-alt"></i>
-          <span>+012 345 6789</span>
+          <span>{{ metaData.phoneNumber }}</span>
         </div>
         <!-- Email Contact -->
         <div class="flex items-center space-x-2">
           <i class="far fa-envelope"></i>
-          <span>info@example.com</span>
+          <span>{{ metaData.email }}</span>
         </div>
       </div>
       <!-- Social Media Links -->
       <div class="flex items-center space-x-4">
         <span>Follow Us:</span>
-        <a href="#" class="text-gray-200 hover:text-gray-400"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-gray-200 hover:text-gray-400"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-gray-200 hover:text-gray-400"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="text-gray-200 hover:text-gray-400"><i class="fab fa-instagram"></i></a>
+        <a :href="metaData.socialMedia.facebook" class="text-gray-200 hover:text-gray-400">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a :href="metaData.socialMedia.twitter" class="text-gray-200 hover:text-gray-400">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a :href="metaData.socialMedia.linkedin" class="text-gray-200 hover:text-gray-400">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a :href="metaData.socialMedia.instagram" class="text-gray-200 hover:text-gray-400">
+          <i class="fab fa-instagram"></i>
+        </a>
       </div>
     </div>
   </div>
@@ -28,11 +36,18 @@
 </template>
 
 <script>
+import { metaData } from '@/data/metaData'
+
 export default {
-  name: 'Top-bar'
+  name: 'Top-bar',
+  data() {
+    return {
+      metaData
+    }
+  }
 }
 </script>
 
 <style scoped>
-/* custom scoped styles outisde of tailwind classes */
+/* custom scoped styles outside of tailwind classes */
 </style>
