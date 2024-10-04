@@ -6,9 +6,12 @@
         <!-- Left Text -->
         <div class="text-center md:text-left mb-3 md:mb-0">
           &copy;
-          <a class="border-b border-transparent hover:border-gray-300" href="#">{{
-            metaData.credits.company
-          }}</a
+          <a
+            class="border-b border-transparent hover:border-gray-300"
+            targer
+            :href="metaData.credits.companyWebsite"
+          >
+            {{ metaData.credits.companyName }} </a
           >, All Right Reserved.
         </div>
 
@@ -18,14 +21,19 @@
           <a
             class="border-b border-transparent hover:border-gray-300"
             :href="metaData.credits.linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
             >{{ metaData.credits.author }}</a
           >
           Distributed By
           <a
             class="border-b border-transparent hover:border-gray-300"
             :href="metaData.credits.companyWebsite"
-            >{{ metaData.credits.companyName }}</a
+            target="_blank"
+            rel="noopener noreferrer"
           >
+            {{ metaData.credits.companyName }}
+          </a>
         </div>
       </div>
     </div>

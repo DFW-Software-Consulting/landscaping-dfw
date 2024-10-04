@@ -2,10 +2,11 @@ export const metaData = {
   credits: {
     linkedin: 'https://www.linkedin.com/in/jeremy-ashley-webdev/',
     author: 'Jeremy Ashley',
-    companyWebsite: 'https://dfwsc.netlify.app',
-    companyName: 'DFW Landscaping Company'
+    companyName: 'DFW Software Consulting',
+    companyWebsite: 'https://dfwsc.netlify.app'
   },
   email: 'info@example.com',
+  companyName: 'DFW Landscaping Company',
   address: '123 Street Dallas, TX',
   phoneNumber: '012 345 6789',
   socialMedia: {

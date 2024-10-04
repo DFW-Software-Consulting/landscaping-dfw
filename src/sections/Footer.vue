@@ -10,7 +10,7 @@
             <i class="fa fa-map-marker-alt mr-3"></i>{{ metaData.address }}
           </p>
           <p class="mb-2 flex items-center">
-            <i class="fa fa-phone-alt mr-3"></i>{{ metaData.phone }}
+            <i class="fa fa-phone-alt mr-3"></i>{{ metaData.phoneNumber }}
           </p>
           <p class="mb-2 flex items-center">
             <i class="fa fa-envelope mr-3"></i>{{ metaData.email }}
