@@ -14,8 +14,8 @@
     <!-- Navbar Links and Actions -->
     <div
       :class="[
-        'lg:flex lg:items-center lg:flex-grow lg:justify-between',
-        isNavbarOpen ? 'block' : 'hidden'
+        isNavbarOpen ? 'block' : 'hidden',
+        'lg:flex lg:items-center lg:flex-grow lg:justify-between'
       ]"
       id="navbarCollapse"
     >
@@ -23,9 +23,24 @@
         class="flex flex-col lg:flex-row lg:ml-auto space-y-4 lg:space-y-0 lg:space-x-6 p-4 lg:p-0"
       >
         <a href="index.html" class="text-gray-700 hover:text-gray-900 font-semibold">Home</a>
-        <a href="#about" class="text-gray-700 hover:text-gray-900 font-semibold">About</a>
-        <a href="#services" class="text-gray-700 hover:text-gray-900 font-semibold">Services</a>
-        <a href="#project" class="text-gray-700 hover:text-gray-900 font-semibold">Projects</a>
+        <a
+          href="#about"
+          class="text-gray-700 hover:text-gray-900 font-semibold"
+          @click.prevent="scrollTo('about')"
+          >About</a
+        >
+        <a
+          href="#services"
+          class="text-gray-700 hover:text-gray-900 font-semibold"
+          @click.prevent="scrollTo('services')"
+          >Services</a
+        >
+        <a
+          href="#project"
+          class="text-gray-700 hover:text-gray-900 font-semibold"
+          @click.prevent="scrollTo('project')"
+          >Projects</a
+        >
         <!-- Dropdown Menu -->
         <div class="relative group">
           <a href="#" class="text-gray-700 hover:text-gray-900 font-semibold cursor-pointer"
@@ -35,18 +50,26 @@
             class="hidden absolute bg-white shadow-lg rounded mt-2 w-40 group-hover:flex flex-col space-y-2"
           >
             <a href="feature.html" class="px-4 py-2 hover:bg-gray-100">Features</a>
-            <a href="#quote" class="px-4 py-2 hover:bg-gray-100">Free Quote</a>
+            <a href="#quote" class="px-4 py-2 hover:bg-gray-100" @click.prevent="scrollTo('quote')"
+              >Free Quote</a
+            >
             <a href="team.html" class="px-4 py-2 hover:bg-gray-100">Our Team</a>
             <a href="testimonial.html" class="px-4 py-2 hover:bg-gray-100">Testimonial</a>
             <a href="404.html" class="px-4 py-2 hover:bg-gray-100">404 Page</a>
           </div>
         </div>
-        <a href="#contact" class="text-gray-700 hover:text-gray-900 font-semibold">Contact</a>
+        <a
+          href="#contact"
+          class="text-gray-700 hover:text-gray-900 font-semibold"
+          @click.prevent="scrollTo('contact')"
+          >Contact</a
+        >
       </div>
       <!-- Get A Quote Button -->
       <a
         href="#quote"
         class="hidden lg:inline-block bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition"
+        @click.prevent="scrollTo('quote')"
       >
         Get A Quote <i class="fa fa-arrow-right ml-3"></i>
       </a>
@@ -69,6 +92,15 @@ export default {
   methods: {
     toggleNavbar() {
       this.isNavbarOpen = !this.isNavbarOpen
+    },
+    scrollTo(sectionId) {
+      // Use `scrollIntoView` to smoothly scroll to the target section
+      const section = document.getElementById(sectionId)
+      if (section) {
+        section.scrollIntoView({
+          behavior: 'smooth'
+        })
+      }
     }
   }
 }

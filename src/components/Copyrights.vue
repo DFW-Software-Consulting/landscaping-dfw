@@ -44,9 +44,9 @@
   <a
     href="#"
     @click.prevent="scrollToTop"
-    class="fixed bottom-5 right-5 p-4 bg-primary text-white rounded-full shadow-lg hover:bg-primary-dark transition duration-300"
+    class="fixed bottom-5 right-5 p-4 bg-primary bg-slate-700 text-white rounded-full shadow-lg hover:bg-primary-dark transition duration-300"
   >
-    <i class="bi bi-arrow-up"></i>
+    <i class="bi bi-arrow-up">^</i>
   </a>
 </template>
 
