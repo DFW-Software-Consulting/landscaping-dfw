@@ -1,63 +1,50 @@
 <template>
-  <!-- About Start -->
-  <section id="about" class="w-full py-16">
-    <div class="max-w-7xl mx-auto">
-      <div class="flex flex-wrap items-end gap-12">
-        <!-- Image Section -->
-        <div class="w-full md:w-5/12 lg:w-3/12 animate-fade-in-up">
-          <img class="w-full rounded-lg" src="../assets/img/about.jpg" alt="About Us" />
-        </div>
+  <section id="about" aria-labelledby="about-title" class="section">
+    <div class="container-x grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-5">
+        <img
+          :src="about.image"
+          :alt="about.imageAlt"
+          width="500"
+          height="1000"
+          loading="lazy"
+          class="mx-auto aspect-[4/5] w-full max-w-md rounded-3xl object-cover object-top shadow-lift lg:max-w-none"
+        />
+      </div>
+      <div class="lg:col-span-7">
+        <p class="eyebrow">{{ about.eyebrow }}</p>
+        <h2 id="about-title" class="section-title">{{ about.title }}</h2>
+        <p v-for="paragraph in about.paragraphs" :key="paragraph" class="lead mt-5">
+          {{ paragraph }}
+        </p>
 
-        <!-- Main Content -->
-        <div class="w-full md:w-7/12 lg:w-6/12 animate-fade-in-up">
-          <h1 class="text-6xl font-bold text-blue-600 mb-0">25</h1>
-          <p class="text-blue-600 text-lg mb-4">Year of Experience</p>
-          <h2 class="text-4xl font-semibold mb-4">We Make Your Home Like A Garden</h2>
-          <p class="text-gray-600 mb-4">
-            Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-            eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore
-            erat amet
-          </p>
-          <a
-            class="inline-block bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-700 transition"
-            href=""
-            >Explore More</a
-          >
-        </div>
-
-        <!-- Info Boxes -->
-        <div class="w-full flex md:w-full lg:w-3/12 animate-fade-in-up">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-12">
-            <!-- Box 1 -->
-            <div class="border-l-4 border-blue-600 pl-4">
-              <i class="fa fa-award text-blue-600 text-3xl mb-3"></i>
-              <h4 class="text-lg font-semibold mb-2">Award Winning</h4>
-              <p class="text-gray-600">
-                Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-              </p>
-            </div>
-            <!-- Box 2 -->
-            <div class="border-l-4 border-blue-600 pl-4">
-              <i class="fa fa-users text-blue-600 text-3xl mb-3"></i>
-              <h4 class="text-lg font-semibold mb-2">Dedicated Team</h4>
-              <p class="text-gray-600">
-                Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-              </p>
-            </div>
+        <dl class="mt-8 grid grid-cols-3 gap-4 border-y border-sand-200 py-6">
+          <div v-for="stat in about.stats" :key="stat.label" class="flex flex-col-reverse justify-end">
+            <dt class="text-sm text-ink-muted">{{ stat.label }}</dt>
+            <dd class="font-display text-3xl font-bold text-forest-700 sm:text-4xl">
+              {{ stat.value }}
+            </dd>
           </div>
-        </div>
+        </dl>
+
+        <ul class="mt-8 grid gap-6 sm:grid-cols-2">
+          <li v-for="point in about.points" :key="point.title" class="flex gap-4">
+            <i :class="point.icon" class="mt-1 text-2xl text-clay-600" aria-hidden="true"></i>
+            <div>
+              <h3 class="font-sans text-lg font-semibold tracking-normal">{{ point.title }}</h3>
+              <p class="mt-1 text-ink-muted">{{ point.description }}</p>
+            </div>
+          </li>
+        </ul>
+
+        <a :href="about.cta.href" class="btn-primary mt-10">{{ about.cta.label }}</a>
       </div>
     </div>
   </section>
-  <!-- About End -->
 </template>
 
-<script>
-export default {
-  name: 'AboutSection'
-}
-</script>
+<script setup>
+import { about } from '@/data/contentData'
 
-<style scoped>
-/* If you have any additional custom styles for this component, add them here */
-</style>
+defineOptions({ name: 'AboutSection' })
+</script>

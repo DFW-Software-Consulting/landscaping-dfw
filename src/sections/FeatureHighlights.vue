@@ -1,48 +1,32 @@
 <template>
-  <!-- Feature Highlight Start -->
-  <h1 class="text-4xl font-bold mb-6">Exceptional Services</h1>
-  <p class="text-lg mb-8">
-    We offer top-notch services that enhance your experience and cater to all your gardening needs.
-    With our team of experts, you can be assured of an outstanding transformation for your green
-    space.
-  </p>
-  <div class="w-full my-10 py-20 bg-fixed bg-cover bg-center text-white"
-    :style="{ backgroundImage: `url(${backgroundImage})` }">
-    <div class="max-w-7xl mx-auto py-10">
-      <!-- Title and Description -->
-
-      <!-- Bullet Points Section: Overlay on the Image -->
-      <ul class="list-disc list-inside space-y-6 font-bold text-3xl font-baltimore">
-        <li>High-quality plants and materials</li>
-        <li>Experienced gardening professionals</li>
-        <li>Customized design solutions</li>
-      </ul>
-
-      <!-- Button -->
-      <div class="mt-8">
-        <a class="bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-700 transition" href="#">
-          Learn More
-        </a>
+  <section aria-labelledby="banner-title" class="relative isolate overflow-hidden text-white">
+    <img
+      :src="banner.image"
+      alt=""
+      width="1920"
+      height="1080"
+      loading="lazy"
+      class="absolute inset-0 -z-20 h-full w-full object-cover"
+    />
+    <div class="absolute inset-0 -z-10 bg-forest-950/80" aria-hidden="true"></div>
+    <div class="container-x section">
+      <div class="max-w-2xl">
+        <p class="eyebrow !text-clay-400">{{ banner.eyebrow }}</p>
+        <h2 id="banner-title" class="section-title !text-white">{{ banner.title }}</h2>
+        <ul class="mt-8 space-y-4 text-lg">
+          <li v-for="bullet in banner.bullets" :key="bullet" class="flex gap-3">
+            <i class="fa-solid fa-circle-check mt-1.5 text-forest-300" aria-hidden="true"></i>
+            <span>{{ bullet }}</span>
+          </li>
+        </ul>
+        <a :href="banner.cta.href" class="btn-accent mt-10">{{ banner.cta.label }}</a>
       </div>
     </div>
-  </div>
-  <!-- Feature Highlight End -->
+  </section>
 </template>
 
-<script>
-// Import the image from assets
-import backgroundImage from '../assets/img/carousel-1.jpg'
+<script setup>
+import { banner } from '@/data/contentData'
 
-export default {
-  name: 'FeatureHighlight',
-  data() {
-    return {
-      backgroundImage
-    }
-  }
-}
+defineOptions({ name: 'FeatureHighlight' })
 </script>
-
-<style scoped>
-/* Scoped styles for this component, if needed */
-</style>
