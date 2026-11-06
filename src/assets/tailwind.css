@@ -2,11 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
+  body {
+    @apply bg-sand-50 font-sans text-base leading-relaxed text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display leading-tight tracking-tight text-forest-950;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-clay-600;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
 
-@font-face {
-    font-family: 'Baltimore';
-    src: url('/src/assets/fonts/Baltimore.ttf') format('truetype');
-    /* Adjust path & format */
-    font-weight: normal;
-    font-style: normal;
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+  .eyebrow {
+    @apply mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-clay-600;
+  }
+  .section-title {
+    @apply text-3xl font-bold sm:text-4xl lg:text-5xl;
+  }
+  .lead {
+    @apply text-lg text-ink-muted;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold transition duration-200;
+  }
+  .btn-primary {
+    @apply btn bg-forest-700 text-white shadow-card hover:bg-forest-800 hover:shadow-lift active:bg-forest-900;
+  }
+  .btn-accent {
+    @apply btn bg-clay-600 text-white shadow-card hover:bg-clay-700 hover:shadow-lift;
+  }
+  .btn-outline {
+    @apply btn border-2 border-forest-700 text-forest-800 hover:bg-forest-700 hover:text-white;
+  }
+  .field-label {
+    @apply mb-1.5 block text-sm font-semibold text-forest-900;
+  }
+  .field {
+    @apply w-full rounded-lg border border-sand-300 bg-white px-4 py-3 text-ink placeholder:text-ink-muted/70 transition focus:border-forest-600 focus:outline-none focus:ring-2 focus:ring-forest-500/40;
+  }
+  .field[aria-invalid='true'] {
+    @apply border-red-700 ring-1 ring-red-700;
+  }
+  .field-error {
+    @apply mt-1.5 text-sm font-medium text-red-700;
+  }
 }

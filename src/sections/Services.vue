@@ -1,102 +1,51 @@
 <template>
-  <!-- Services Section -->
-  <section id="services" class="w-full py-20">
-    <div class="max-w-7xl mx-auto">
-      <!-- Section Title -->
-      <div class="text-center mx-auto mb-12" style="max-width: 500px">
-        <p class="text-xl font-bold text-primary mb-2">Our Services</p>
-        <h1 class="text-5xl font-bold mb-5">Services That We Offer For You</h1>
-      </div>
-
-      <!-- Slideshow on small screens and flex layout on medium and larger screens -->
-      <div>
-        <!-- Slideshow (visible only on small screens) -->
-        <div class="block md:hidden">
-          <Carousel
-            :slides="services"
-            :autoplay="true"
-            :autoplayDelay="5000"
-            :showNavigation="true"
-          >
-            <!-- Use Scoped Slot to Render Slide Content -->
-            <template v-slot:default="{ slide }">
-              <!-- Responsive Slide Container -->
-              <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full mx-4">
-                <!-- Responsive Image -->
-                <img class="w-full h-40 object-cover" :src="slide.image" :alt="slide.title" />
-                <!-- Slide Content -->
-                <div class="p-6">
-                  <div class="flex items-center justify-center mb-4">
-                    <img
-                      class="w-10 h-10 rounded-full bg-light mr-4"
-                      :src="slide.icon"
-                      :alt="`${slide.title} Icon`"
-                    />
-                    <h4 class="text-xl font-semibold">{{ slide.title }}</h4>
-                  </div>
-                  <p class="text-gray-600 mb-4 text-center">{{ slide.description }}</p>
-                  <a
-                    class="text-primary flex items-center justify-center text-sm font-medium"
-                    href="#"
-                  >
-                    <i class="fa fa-plus text-primary mr-2"></i>Read More
-                  </a>
-                </div>
-              </div>
-            </template>
-          </Carousel>
-        </div>
-
-        <!-- Flex layout (visible only on medium and larger screens) -->
-        <div class="hidden md:flex flex-wrap gap-8 justify-center">
-          <div v-for="(service, index) in services" :key="index" class="w-full lg:w-1/3 md:w-1/2">
-            <!-- Slide Container -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full mx-4">
-              <!-- Image -->
-              <img class="w-full h-40 object-cover" :src="service.image" :alt="service.title" />
-              <!-- Content -->
-              <div class="p-6">
-                <div class="flex items-center justify-center mb-4">
-                  <img
-                    class="w-10 h-10 rounded-full bg-light mr-4"
-                    :src="service.icon"
-                    :alt="`${service.title} Icon`"
-                  />
-                  <h4 class="text-xl font-semibold">{{ service.title }}</h4>
-                </div>
-                <p class="text-gray-600 mb-4 text-center">{{ service.description }}</p>
-                <a
-                  class="text-primary flex items-center justify-center text-sm font-medium"
-                  href="#"
+  <section id="services" aria-labelledby="services-title" class="section bg-white">
+    <div class="container-x">
+      <SectionHeading id="services-title" v-bind="servicesIntro" />
+      <div class="mt-12">
+        <CardCarousel :items="services" label="Services" :autoplay="false">
+          <template #default="{ item }">
+            <article
+              class="group flex w-full flex-col overflow-hidden rounded-2xl border border-sand-200 bg-sand-50 transition duration-300 hover:-translate-y-1 hover:shadow-lift motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            >
+              <img
+                :src="item.image"
+                :alt="item.imageAlt"
+                width="550"
+                height="550"
+                loading="lazy"
+                class="aspect-[16/10] w-full object-cover"
+              />
+              <div class="flex flex-1 flex-col p-6">
+                <span
+                  class="-mt-12 mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-forest-700 text-white shadow-card ring-4 ring-sand-50"
                 >
-                  <i class="fa fa-plus text-primary mr-2"></i>Read More
+                  <i :class="item.icon" aria-hidden="true"></i>
+                </span>
+                <h3 class="font-sans text-xl font-semibold tracking-normal">{{ item.title }}</h3>
+                <p class="mt-2 flex-1 text-ink-muted">{{ item.description }}</p>
+                <a
+                  href="#quote"
+                  class="mt-5 inline-flex items-center gap-2 font-semibold text-forest-700 hover:text-forest-900"
+                >
+                  Request a quote
+                  <span class="sr-only"> for {{ item.title }}</span>
+                  <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
                 </a>
               </div>
-            </div>
-          </div>
-        </div>
+            </article>
+          </template>
+        </CardCarousel>
       </div>
     </div>
   </section>
 </template>
 
-<script>
-import Carousel from '@/components/Carousel.vue'
-import { services } from '@/data/servicesData' // Importing data from a separate file
+<script setup>
+import CardCarousel from '@/components/CardCarousel.vue'
+import SectionHeading from '@/components/SectionHeading.vue'
+import { services } from '@/data/servicesData'
+import { servicesIntro } from '@/data/contentData'
 
-export default {
-  name: 'ServicesSection',
-  components: {
-    Carousel
-  },
-  data() {
-    return {
-      services
-    }
-  }
-}
+defineOptions({ name: 'ServicesSection' })
 </script>
-
-<style scoped>
-/* Styles for the services section */
-</style>

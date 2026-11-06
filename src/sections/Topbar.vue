@@ -1,53 +1,21 @@
 <template>
-  <!-- Topbar Start -->
-  <div class="bg-gray-900 text-gray-200 px-0 py-2">
-    <div class="hidden lg:flex justify-between px-5">
-      <div class="flex space-x-8">
-        <!-- Phone Contact -->
-        <div class="flex items-center space-x-2">
-          <i class="fa fa-phone-alt"></i>
-          <span>{{ metaData.phoneNumber }}</span>
-        </div>
-        <!-- Email Contact -->
-        <div class="flex items-center space-x-2">
-          <i class="far fa-envelope"></i>
-          <span>{{ metaData.email }}</span>
-        </div>
-      </div>
-      <!-- Social Media Links -->
-      <div class="flex items-center space-x-4">
-        <span>Follow Us:</span>
-        <a :href="metaData.socialMedia.facebook" class="text-gray-200 hover:text-gray-400">
-          <i class="fab fa-facebook-f"></i>
+  <div class="bg-forest-950 text-sm text-forest-100">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-2">
+      <p class="text-forest-200">{{ metaData.demoNotice }}</p>
+      <div class="hidden items-center gap-6 lg:flex">
+        <a :href="metaData.phoneHref" class="inline-flex items-center gap-2 hover:text-white">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>{{ metaData.phoneNumber }}
         </a>
-        <a :href="metaData.socialMedia.twitter" class="text-gray-200 hover:text-gray-400">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a :href="metaData.socialMedia.linkedin" class="text-gray-200 hover:text-gray-400">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a :href="metaData.socialMedia.instagram" class="text-gray-200 hover:text-gray-400">
-          <i class="fab fa-instagram"></i>
+        <a :href="`mailto:${metaData.email}`" class="inline-flex items-center gap-2 hover:text-white">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>{{ metaData.email }}
         </a>
       </div>
     </div>
   </div>
-  <!-- Topbar End -->
 </template>
 
-<script>
+<script setup>
 import { metaData } from '@/data/metaData'
 
-export default {
-  name: 'Top-bar',
-  data() {
-    return {
-      metaData
-    }
-  }
-}
+defineOptions({ name: 'TopBar' })
 </script>
-
-<style scoped>
-/* custom scoped styles outside of tailwind classes */
-</style>

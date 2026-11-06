@@ -1,61 +1,29 @@
 <template>
-  <!-- Top Feature Start -->
-  <div class="w-full py-5 lg:pt-0 bg-gray-100">
-    <div class="max-w-7xl mx-auto py-5 lg:pt-0">
-      <div class="flex flex-wrap -mx-4">
-        <!-- Feature 1 -->
-        <div
-          class="w-full lg:w-1/3 px-4 mb-6 lg:mb-0"
-          v-for="(feature, index) in features"
-          :key="index"
+  <section aria-label="Why choose us" class="relative z-10 bg-sand-50">
+    <div class="container-x">
+      <ul class="grid gap-5 py-10 md:grid-cols-3 lg:-mt-10 lg:py-0">
+        <li
+          v-for="item in highlights"
+          :key="item.title"
+          class="flex items-start gap-4 rounded-2xl bg-white p-6 shadow-card"
         >
-          <div class="bg-white shadow-lg flex items-center h-full px-5 min-h-[160px]">
-            <div class="flex items-center">
-              <div
-                class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-primary text-xl"
-              >
-                <i :class="feature.icon" class="text-blue-600"></i>
-              </div>
-              <div class="ml-3">
-                <h4 class="text-lg font-bold">{{ feature.title }}</h4>
-                <span class="text-gray-600">{{ feature.description }}</span>
-              </div>
-            </div>
+          <span
+            class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-forest-100 text-forest-700"
+          >
+            <i :class="item.icon" aria-hidden="true"></i>
+          </span>
+          <div>
+            <h2 class="font-sans text-lg font-semibold tracking-normal">{{ item.title }}</h2>
+            <p class="mt-1 text-ink-muted">{{ item.description }}</p>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
-  </div>
-  <!-- Top Feature End -->
+  </section>
 </template>
 
-<script>
-export default {
-  name: 'TopFeatures',
-  data() {
-    return {
-      features: [
-        {
-          title: 'No Hidden Cost',
-          description: 'Clita erat ipsum lorem sit sed stet duo justo',
-          icon: 'fa fa-times'
-        },
-        {
-          title: 'Dedicated Team',
-          description: 'Clita erat ipsum lorem sit sed stet duo justo',
-          icon: 'fa fa-users'
-        },
-        {
-          title: '24/7 Available',
-          description: 'Clita erat ipsum lorem sit sed stet duo justo',
-          icon: 'fa fa-phone'
-        }
-      ]
-    }
-  }
-}
-</script>
+<script setup>
+import { highlights } from '@/data/contentData'
 
-<style scoped>
-/* If you need any additional custom styles, add them here */
-</style>
+defineOptions({ name: 'TopFeatures' })
+</script>

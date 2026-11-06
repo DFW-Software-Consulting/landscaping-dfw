@@ -1,111 +1,66 @@
 <template>
-  <!-- Navbar Start -->
-  <nav class="bg-white w-full flex items-center justify-between p-0 shadow-md">
-    <!-- Brand Logo -->
-    <a href="index.html" class="flex items-center px-4 lg:px-5">
-      <!-- Use the imported logo as the source -->
-      <img :src="logo" alt="Logo" class="w-10 h-auto mr-2" />
-      <h1 class="text-xl font-bold m-0">DFW Landscaping Company</h1>
-    </a>
-    <!-- Mobile Menu Toggle Button -->
-    <button type="button" class="lg:hidden p-4" @click="toggleNavbar">
-      <span class="fas fa-bars"></span>
-    </button>
-    <!-- Navbar Links and Actions -->
-    <div
-      :class="[
-        isNavbarOpen ? 'block' : 'hidden',
-        'lg:flex lg:items-center lg:flex-grow lg:justify-between'
-      ]"
-      id="navbarCollapse"
-    >
-      <div
-        class="flex flex-col lg:flex-row lg:ml-auto space-y-4 lg:space-y-0 lg:space-x-6 p-4 lg:p-0"
-      >
-        <a href="index.html" class="text-gray-700 hover:text-gray-900 font-semibold">Home</a>
-        <a
-          href="#about"
-          class="text-gray-700 hover:text-gray-900 font-semibold"
-          @click.prevent="scrollTo('about')"
-          >About</a
-        >
-        <a
-          href="#services"
-          class="text-gray-700 hover:text-gray-900 font-semibold"
-          @click.prevent="scrollTo('services')"
-          >Services</a
-        >
-        <a
-          href="#project"
-          class="text-gray-700 hover:text-gray-900 font-semibold"
-          @click.prevent="scrollTo('project')"
-          >Projects</a
-        >
-        <!-- Dropdown Menu -->
-        <div class="relative group">
-          <a href="#" class="text-gray-700 hover:text-gray-900 font-semibold cursor-pointer"
-            >Pages</a
-          >
-          <div
-            class="hidden absolute bg-white shadow-lg rounded mt-2 w-40 group-hover:flex flex-col space-y-2"
-          >
-            <a href="feature.html" class="px-4 py-2 hover:bg-gray-100">Features</a>
-            <a href="#quote" class="px-4 py-2 hover:bg-gray-100" @click.prevent="scrollTo('quote')"
-              >Free Quote</a
-            >
-            <a href="team.html" class="px-4 py-2 hover:bg-gray-100">Our Team</a>
-            <a href="testimonial.html" class="px-4 py-2 hover:bg-gray-100">Testimonial</a>
-            <a href="404.html" class="px-4 py-2 hover:bg-gray-100">404 Page</a>
-          </div>
-        </div>
-        <a
-          href="#contact"
-          class="text-gray-700 hover:text-gray-900 font-semibold"
-          @click.prevent="scrollTo('contact')"
-          >Contact</a
-        >
-      </div>
-      <!-- Get A Quote Button -->
-      <a
-        href="#quote"
-        class="hidden lg:inline-block bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition"
-        @click.prevent="scrollTo('quote')"
-      >
-        Get A Quote <i class="fa fa-arrow-right ml-3"></i>
+  <header class="sticky top-0 z-50 border-b border-sand-200 bg-white/95 backdrop-blur">
+    <div class="container-x flex h-16 items-center justify-between">
+      <a href="#top" class="flex items-center gap-2.5" @click="close">
+        <img :src="logo" alt="" width="36" height="36" class="h-9 w-9" />
+        <span class="font-display text-lg font-bold text-forest-900">{{ metaData.companyName }}</span>
       </a>
+
+      <nav aria-label="Primary" class="hidden items-center gap-1 lg:flex">
+        <a v-for="link in navLinks" :key="link.href" :href="link.href" class="nav-link">
+          {{ link.label }}
+        </a>
+        <a href="#quote" class="btn-primary ml-3 !px-5 !py-2.5">Get a quote</a>
+      </nav>
+
+      <button
+        type="button"
+        class="-mr-2 flex h-11 w-11 items-center justify-center rounded-lg text-forest-900 hover:bg-forest-50 lg:hidden"
+        :aria-expanded="isOpen"
+        aria-controls="mobile-menu"
+        :aria-label="isOpen ? 'Close menu' : 'Open menu'"
+        @click="isOpen = !isOpen"
+      >
+        <i :class="isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'" class="text-xl" aria-hidden="true"></i>
+      </button>
     </div>
-  </nav>
-  <!-- Navbar End -->
+
+    <nav
+      v-show="isOpen"
+      id="mobile-menu"
+      aria-label="Mobile"
+      class="border-t border-sand-200 bg-white lg:hidden"
+      @keydown.esc="isOpen = false"
+    >
+      <div class="container-x flex flex-col py-3">
+        <a
+          v-for="link in navLinks"
+          :key="link.href"
+          :href="link.href"
+          class="rounded-lg px-3 py-3 text-base font-semibold text-forest-900 hover:bg-forest-50"
+          @click="close"
+        >
+          {{ link.label }}
+        </a>
+        <a href="#quote" class="btn-primary mt-2" @click="close">Get a quote</a>
+      </div>
+    </nav>
+  </header>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue'
 import logo from '../assets/img/icon/icon-10.png'
+import { metaData, navLinks } from '@/data/metaData'
 
-export default {
-  name: 'NavbarComponent',
-  data() {
-    return {
-      isNavbarOpen: false,
-      logo
-    }
-  },
-  methods: {
-    toggleNavbar() {
-      this.isNavbarOpen = !this.isNavbarOpen
-    },
-    scrollTo(sectionId) {
-      // Use `scrollIntoView` to smoothly scroll to the target section
-      const section = document.getElementById(sectionId)
-      if (section) {
-        section.scrollIntoView({
-          behavior: 'smooth'
-        })
-      }
-    }
-  }
-}
+defineOptions({ name: 'NavbarComponent' })
+
+const isOpen = ref(false)
+const close = () => (isOpen.value = false)
 </script>
 
 <style scoped>
-/* Custom styles (if needed) */
+.nav-link {
+  @apply rounded-lg px-3 py-2 text-[0.95rem] font-semibold text-forest-900 transition hover:bg-forest-50 hover:text-forest-700;
+}
 </style>
